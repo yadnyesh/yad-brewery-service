@@ -1,7 +1,7 @@
 package io.yadnyesh.yadbrewery.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.yadnyesh.yadbrewery.model.BeerDTO;
+import io.yadnyesh.yadbrewery.model.BeerDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -29,7 +29,7 @@ class BeerControllerTest {
 	
 	@Test
 	void saveNewBeer() throws Exception {
-		BeerDTO beerDTO = BeerDTO.builder().build();
+		BeerDto beerDTO = BeerDto.builder().build();
 		String beerDtoJson = objectMapper.writeValueAsString(beerDTO);
 		
 		mockMvc.perform(post("/api/v1/beer")
@@ -40,7 +40,7 @@ class BeerControllerTest {
 	
 	@Test
 	void updateBeerById() throws Exception {
-		BeerDTO beerDTO = BeerDTO.builder().build();
+		BeerDto beerDTO = BeerDto.builder().build();
 		String beerDtoJson = objectMapper.writeValueAsString(beerDTO);
 		mockMvc.perform(put("/api/v1/beer/" + UUID.randomUUID().toString())
 				.contentType(MediaType.APPLICATION_JSON)
