@@ -3,13 +3,16 @@ package io.yadnyesh.yadbrewery.model;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 
+import java.io.Serializable;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.data.domain.PageRequest;
 
-public class BeerPagedList extends PageImpl<BeerDto> {
+public class BeerPagedList extends PageImpl<BeerDto> implements Serializable {
+	
+	static final long serialVersionUID = -8636756939904382541L;
 	
 	
 	@JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
